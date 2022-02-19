@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import OneJoke from "./components/OneJoke";
+import AllJokes from './components/AllJokes';
+import EditJoke from './components/EditJoke';
+import NewJoke from './components/NewJoke';
+import Home from './components/Home';
+import {Router} from "@reach/router";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Home path="/" />
+        <AllJokes path="/all" /> 
+        <NewJoke path="/new" />
+        <OneJoke path="/jokes/:id" />
+        <EditJoke path="/jokes/edit/:id" />
+      </Router>
+
+
+
     </div>
   );
 }
